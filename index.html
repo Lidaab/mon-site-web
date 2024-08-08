@@ -91,12 +91,13 @@
             display: flex;
             justify-content: center;
             margin-bottom: 20px;
+            flex-wrap: wrap;
         }
         .filter button {
             background-color: #fff;
             border: 2px solid #cf3d26;
             padding: 10px 20px;
-            margin: 0 10px;
+            margin: 10px;
             cursor: pointer;
             font-size: 16px;
             border-radius: 20px;
@@ -110,12 +111,13 @@
         .cards {
             display: flex;
             flex-wrap: wrap;
-            justify-content: space-around;
+            justify-content: center;
         }
         .card {
             background-color: #f9f9f9;
             border: 1px solid #cf3d26;
-            width: 300px;
+            width: 100%;
+            max-width: 300px;
             margin: 10px;
             padding: 20px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
@@ -276,6 +278,54 @@
         }
         footer img.logo {
             height: 50px;
+        }
+
+        @media (max-width: 768px) {
+            header .header-content {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            header nav {
+                flex-direction: column;
+                align-items: flex-start;
+                width: 100%;
+            }
+            header nav a {
+                margin-bottom: 10px;
+            }
+            .cards {
+                flex-direction: column;
+                align-items: center;
+            }
+            .card {
+                max-width: 90%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header .header-content {
+                padding: 0 10px;
+            }
+            .introduction h1 {
+                font-size: 28px;
+            }
+            .introduction p {
+                font-size: 16px;
+            }
+            .filter button {
+                padding: 8px 15px;
+                font-size: 14px;
+            }
+            .card {
+                width: 100%;
+                padding: 15px;
+            }
+            .card h3 {
+                font-size: 20px;
+            }
+            .card p {
+                font-size: 12px;
+            }
         }
     </style>
 </head>
@@ -478,4 +528,3 @@
     </script>
 </body>
 </html>
-
